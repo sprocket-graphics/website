@@ -2,17 +2,20 @@
  * This module renders the settings page when `settings` route is requested
  * it also saves the settings to a cookie
  */
-const { uniqWith, isEqual } = require('lodash')
-const { createClient } = require('contentful')
+const { uniqWith, isEqual } = require('lodash')const { createClient } = require('contentful')
 
 const { isCustomCredentials, updateSettingsQuery } = require('../helpers')
 const { updateCookie } = require('../lib/cookies')
 const { translate } = require('../i18n/i18n')
 const { initClients, getSpace } = require('../services/contentful')
 
-const SETTINGS_NAME = 'theExampleAppSettings'
+const SETTINGS_NAME = 'my app'
 
-async function renderSettings (response, opts) {
+async function loadConfiguration(opts) {
+  // TODO: load from database 
+}
+
+async function renderPage (response, opts) {
   // Get connected space to display the space name on top of the settings
   let space = false
   try {
