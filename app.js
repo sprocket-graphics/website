@@ -8,11 +8,7 @@ const querystring = require('querystring')
 const helmet = require('helmet')
 
 // Load environment variables using dotenv
-require('dotenv').config({ path: 'variables.env' })
 
-const helpers = require('./helpers')
-const { translate, initializeTranslations, setFallbackLocale } = require('./i18n/i18n')
-const breadcrumb = require('./lib/breadcrumb')
 const { updateCookie } = require('./lib/cookies')
 const settings = require('./lib/settings')
 const routes = require('./routes/index')
@@ -158,6 +154,8 @@ app.use(function (err, request, response, next) {
   // Render the error page
   response.status(err.status || 500)
   response.render('error')
+  
+  console.log("!!!")
 })
 
 module.exports = app
