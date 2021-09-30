@@ -12,11 +12,7 @@ const { initClients, getSpace } = require('../services/contentful')
 
 const SETTINGS_NAME = 'my app'
 
-async function loadConfiguration(opts) {
-  // TODO: load from database 
-}
-
-async function renderPage (response, opts) {
+async function renderSettings (response, opts) {
   // Get connected space to display the space name on top of the settings
   let space = false
   try {
