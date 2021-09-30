@@ -2,7 +2,8 @@
  * This module renders the settings page when `settings` route is requested
  * it also saves the settings to a cookie
  */
-const { uniqWith, isEqual } = require('lodash')const { createClient } = require('contentful')
+const { uniqWith, isEqual } = require('lodash')
+const { createClient } = require('contentful')
 
 const { isCustomCredentials, updateSettingsQuery } = require('../helpers')
 const { updateCookie } = require('../lib/cookies')
