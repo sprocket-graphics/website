@@ -20,9 +20,12 @@ You can see a hosted version of `The node.js example app` on <a href="https://th
 
 ## Requirements
 
-* Node 10
-* Git
-* Contentful CLI (only for write access)
+* Must have
+  * Node 10
+  * Git
+* Recommended
+  * TBD
+  * Contentful CLI (only for write access)
 
 Without any changes, this app is connected to a Contentful space with read-only access. To experience the full end-to-end Contentful experience, you need to connect the app to a Contentful space with read _and_ write access. This enables you to see how content editing in the Contentful web app works and how content changes propagate to this app.
 
