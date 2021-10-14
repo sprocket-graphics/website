@@ -10,16 +10,18 @@ const { updateCookie } = require('../lib/cookies')
 const { translate } = require('../i18n/i18n')
 const { initClients, getSpace } = require('../services/contentful')
 
-const SETTINGS_NAME = 'theExampleAppSettings'
+const SETTINGS_NAME = 'my app'
 
 async function renderSettings (response, opts) {
-  // Get connected space to display the space name on top of the settings
-  let space = false
-  try {
-    space = await getSpace()
-  } catch (error) {
-    // We handle errors within the settings page.
-    // No need to throw here.
+  if (process.env.NORMAL_FLOW) {
+    // Get connected space to display the space name on top of the settings
+    let space = false
+    try {
+      space = (await getSpace() || '')     
+    } catch (error) {
+      // We handle errors within the settings page.
+      // No need to throw here.
+    }
   }
 
   response.render('settings', {

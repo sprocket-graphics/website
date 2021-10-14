@@ -9,16 +9,6 @@ mixin lessonModuleCodeSnippet(module)
         a.lesson-module-code__trigger.lesson-module-code__trigger--active(data-target='javascript') JavaScript
       if module.fields.java
         a.lesson-module-code__trigger(data-target='java') Java
-      if module.fields.javaAndroid
-        a.lesson-module-code__trigger(data-target='android') Android
-      if module.fields.php
-        a.lesson-module-code__trigger(data-target='php') PHP
-      if module.fields.python
-        a.lesson-module-code__trigger(data-target='python') Python
-      if module.fields.ruby
-        a.lesson-module-code__trigger(data-target='ruby') Ruby
-      if module.fields.swift
-        a.lesson-module-code__trigger(data-target='swift') Swift
 
     .lesson-module-code__code-area
       if module.fields.curl
@@ -49,6 +39,10 @@ mixin lessonModuleCodeSnippet(module)
         .lesson-module-code__code(id='python')
           pre
             code.python= module.fields.python
+      if module.fields.curl
+        .lesson-module-code__code(id='curl')
+          pre
+            code.shell= module.fields.curl
       if module.fields.ruby
         .lesson-module-code__code(id='ruby')
           pre
