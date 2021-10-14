@@ -20,18 +20,35 @@ You can see a hosted version of `The node.js example app` on <a href="https://th
 
 ## Requirements
 
-* Must have
-  * Node 10
-  * Git
-* Recommended
-  * TBD
-  * Contentful CLI (only for write access)
+* Node 8
+* Git
+* Contentful CLI (only for write access)
 
 Without any changes, this app is connected to a Contentful space with read-only access. To experience the full end-to-end Contentful experience, you need to connect the app to a Contentful space with read _and_ write access. This enables you to see how content editing in the Contentful web app works and how content changes propagate to this app.
 
 ## Common setup
 
-See [common setup](docs/setup.md)
+Clone the repo and install the dependencies.
+
+```bash
+git clone https://github.com/contentful/the-example-app.nodejs.git
+cd the-example-app.nodejs
+```
+
+```bash
+npm install
+```
+
+## Steps for read-only access
+
+To start the express server, run the following
+
+```bash
+npm run start:dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) and take a look around.
+
 
 ## Steps for read and write access (recommended)
 
@@ -68,6 +85,12 @@ npm run start:dev
 Final Step:
 
 Open [http://localhost:3000?editorial_features=enabled](http://localhost:3000?editorial_features=enabled) and take a look around. This URL flag adds an “Edit” button in the app on every editable piece of content which will take you back to Contentful web app where you can make changes. It also adds “Draft” and “Pending Changes” status indicators to all content if relevant.
+
+## Deploy to Heroku
+You can also deploy this app to Heroku:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 
 ## Use Docker
 You can also run this app as a Docker container:
