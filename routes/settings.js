@@ -10,7 +10,7 @@ const { updateCookie } = require('../lib/cookies')
 const { translate } = require('../i18n/i18n')
 const { initClients, getSpace } = require('../services/contentful')
 
-const SETTINGS_NAME = 'my app'
+const SETTINGS_NAME = 'theExampleAppSettings'
 
 async function renderSettings (response, opts) {
   if (process.env.NORMAL_FLOW) {
