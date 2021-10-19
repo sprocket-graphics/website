@@ -1,4 +1,4 @@
-
+/* test comment */
 module.exports = {
   'extends': 'standard',
   'plugins': [
